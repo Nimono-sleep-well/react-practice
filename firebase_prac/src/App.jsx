@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const usersCollectionRef = collection(db, 'users');
     getDocs(usersCollectionRef).then((QuerySnapshot) => {
-      console.log(QuerySnapshot);
+      QuerySnapshot.docs.forEach((doc) => console.log(doc.data));
     });
   }, []);
 
